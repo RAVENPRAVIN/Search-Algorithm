@@ -19,28 +19,98 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
+'''Program for linear search method to match the item in a list
+Developed by:PRAVIN KUMAR A.
+RegisterNumber: 23007430'''
 
-
+def linearSearch(array,n,k):
+        for i in range(n):
+            if array[i]==k:
+                return i
+        return -1
+    
+array = eval(input())
+array.sort()
+k = eval(input())
+n=len(array)
+print(array)
+result = linearSearch(array,n,k)
+if result ==-1:
+    print('Element not found')
+else:
+    print('Element found at index: ',result)
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:PRAVIN KUMAR A.
+RegisterNumber: 23007430
+'''
+def binarySearchIter(array, k, low, high):
+    while low<=high:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input())
+print(array)
+result=binarySearchIter(array,k,0,len(array)-1)
+if result ==-1:
+    print('Element not found')
+else:
+    print('Element found at index: ',result)
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search (recursive Method).
+Developed by:PRAVIN KUMAR A
+RegisterNumber: 212223230155
+'''
+def binarySearchIter(array, k, low, high):
+    if low<=high:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+            return binarySearchIter(array, k, low,high)
+        else:
+            high=mid-1
+            return binarySearchIter(array, k,low,high)
+    else:
+        return -1
+    
+array = eval(input())
+array.sort()
+print(array)
+k = eval(input())
+n=len(array)
+result=binarySearchIter(array,k,0,n-1)
+if result ==-1:
+    print('Element not found')
+else:
+    print('Element found at index: ',result)
+   
 ```
-## Sample Input and Output
+## Output
 
+![3B1](https://github.com/RAVENPRAVIN/Search-Algorithm/assets/146820534/1df64bb2-d99b-43e8-a497-d24e740f7775)
+
+
+![3B2](https://github.com/RAVENPRAVIN/Search-Algorithm/assets/146820534/4b4d49c5-30bc-404d-a2cf-f620b04793c5)
+
+
+![3B3](https://github.com/RAVENPRAVIN/Search-Algorithm/assets/146820534/1336342e-d8d0-4859-873d-45c5c9762b51)
 
 
 
